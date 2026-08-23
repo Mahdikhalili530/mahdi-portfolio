@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mahdi Khalili — Geoinformatics & Photogrammetry portfolio" />
+  <title>Mahdi Khalili | Geospatial Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="ambient ambient-c"></div>
+  <div class="page-noise"></div>
+  <header class="site-header glass-nav">
+    <button class="brand nav-link" data-page="home" type="button">Mahdi Khalili</button>
+    <button class="menu-toggle" aria-label="Toggle navigation" type="button">☰</button>
+    <nav class="nav" aria-label="Main navigation">
+      <button class="nav-link active" data-page="home" type="button">Home</button>
+      <button class="nav-link" data-page="about" type="button">About</button>
+      <button class="nav-link" data-page="resume" type="button">Resume</button>
+      <button class="nav-link" data-page="portfolio" type="button">Portfolio</button>
+      <button class="nav-link" data-page="certifications" type="button">Articles & Certifications</button>
+      <button class="nav-link" data-page="contact" type="button">Contact</button>
+    </nav>
+  </header>
+
+  <main id="app-shell">
+    <section id="home" class="page-panel active" data-page-panel="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content container">
+        <div class="hero-copy">
+          <div class="status-badge"><span></span> Open to student GIS opportunities</div>
+          <p class="eyebrow">GEOSPATIAL PORTFOLIO</p>
+          <h1 id="hero-name">Mahdi Khalili</h1>
+          <p class="hero-lead">I'm a <span id="typed-role" class="accent"></span></p>
+          <p id="hero-summary" class="hero-summary"></p>
+          <div class="hero-actions">
+            <button class="btn primary nav-link" data-page="portfolio" type="button">Explore Projects <span>→</span></button>
+            <a class="btn secondary" href="assets/docs/Mahdi_Khalili_CV.pdf" download>Download CV</a>
+          </div>
+          <div class="social-row" id="social-row"></div>
+        </div>
+
+        <div class="hero-visual-wrap">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="hero-card">
+            <img id="profile-image" src="assets/images/profile.jpg" alt="Portrait of Mahdi Khalili">
+            <div class="hero-card-overlay">
+              <span>Based in Stuttgart, Germany</span>
+              <strong>GIS • WebGIS • Photogrammetry • 3D</strong>
+            </div>
+          </div>
+          <div class="floating-tag tag-one">POSTGIS</div>
+          <div class="floating-tag tag-two">CESIUMJS</div>
+          <div class="floating-tag tag-three">QGIS</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="page-panel" data-page-panel="about">
+      <div class="page-top-glow"></div>
+      <div class="container page-content">
+        <div class="page-heading">
+          <p class="eyebrow">ABOUT ME</p>
+          <h2>Where civil engineering meets geospatial technology.</h2>
+          <p>My profile combines field-oriented engineering experience with GIS, photogrammetry, spatial databases, WebGIS and 3D geoinformation.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel profile-story">
+            <div class="mini-label">PROFILE</div>
+            <p id="about-text"></p>
+          </article>
+          <div class="info-grid" id="info-grid"></div>
+        </div>
+
+        <div class="section-subhead">
+          <p class="eyebrow">TECHNICAL TOOLKIT</p>
+          <h3>Skills grouped by how I use them.</h3>
+        </div>
+        <div class="skills-grid" id="skills-grid"></div>
+
+        <div class="section-subhead">
+          <p class="eyebrow">RESEARCH INTERESTS</p>
+          <h3>Topics I want to keep developing.</h3>
+        </div>
+        <div class="chip-grid" id="research-grid"></div>
+      </div>
+    </section>
+
+    <section id="resume" class="page-panel" data-page-panel="resume">
+      <div class="page-top-glow"></div>
+      <div class="container page-content">
+        <div class="page-heading heading-row">
+          <div>
+            <p class="eyebrow">MY RESUME</p>
+            <h2>Education & professional experience.</h2>
+          </div>
+          <a class="btn primary" href="assets/docs/Mahdi_Khalili_CV.pdf" target="_blank">Open CV ↗</a>
+        </div>
+        <div class="resume-columns">
+          <div>
+            <div class="resume-section-title"><span>01</span><h3>Education</h3></div>
+            <div id="education-list" class="timeline"></div>
+          </div>
+          <div>
+            <div class="resume-section-title"><span>02</span><h3>Experience</h3></div>
+            <div id="experience-list" class="timeline"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="page-panel" data-page-panel="portfolio">
+      <div class="page-top-glow"></div>
+      <div class="container page-content">
+        <div class="page-heading">
+          <p class="eyebrow">SELECTED WORK</p>
+          <h2>Projects that show how I work with geospatial data.</h2>
+          <p>Click a project to open its LinkedIn post or live project page. LinkedIn URLs can be edited later in <strong>data.js</strong>.</p>
+        </div>
+        <div class="filters" id="filters"></div>
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <section id="certifications" class="page-panel" data-page-panel="certifications">
+      <div class="page-top-glow"></div>
+      <div class="container page-content">
+        <div class="page-heading">
+          <p class="eyebrow">ARTICLES & CERTIFICATIONS</p>
+          <h2>Continuous learning beyond the classroom.</h2>
+          <p>Certificates, academic activities, workshops and publications can be added here as your portfolio grows.</p>
+        </div>
+        <div class="cards-3" id="cert-grid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="page-panel" data-page-panel="contact">
+      <div class="page-top-glow"></div>
+      <div class="container page-content">
+        <div class="page-heading">
+          <p class="eyebrow">CONTACT</p>
+          <h2>Have a GIS, WebGIS or geospatial opportunity?</h2>
+          <p>I'm interested in student positions, project collaboration and professional connections in geospatial technology.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-cards" id="contact-cards"></div>
+          <form class="contact-form" id="contact-form">
+            <div class="form-head">
+              <span>Send a message</span>
+              <small>Sends directly to my inbox</small>
+            </div>
+            <div class="form-row">
+              <label><span>Your name</span><input id="name" name="name" type="text" placeholder="Name" required></label>
+              <label><span>Your email</span><input id="email" name="email" type="email" placeholder="Email" required></label>
+            </div>
+            <label><span>Subject</span><input id="subject" name="subject" type="text" placeholder="Subject" required></label>
+            <label><span>Message</span><textarea id="message" name="message" rows="7" placeholder="Tell me about the opportunity..." required></textarea></label>
+            <button class="btn primary" type="submit">Send Message →</button>
+            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="glass-modal" id="project-link-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="Close" data-close-modal>×</button>
+      <span class="mini-label">PROJECT LINK</span>
+      <h3 id="modal-title">LinkedIn post not connected yet</h3>
+      <p id="modal-text">Add this project's exact LinkedIn post URL in <strong>data.js</strong>. Once added, clicking the card will open that post directly.</p>
+      <div class="modal-actions" id="modal-actions"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer glass-footer">
+    <div class="footer-grid container">
+      <div class="footer-brand">
+        <button class="brand nav-link" data-page="home" type="button">Mahdi Khalili</button>
+        <p>Geoinformatics & Photogrammetry M.Sc. student building practical GIS, WebGIS and 3D geospatial solutions.</p>
+        <div class="footer-socials" id="footer-socials"></div>
+      </div>
+      <div class="footer-nav-group">
+        <span>Navigation</span>
+        <button class="nav-link" data-page="about" type="button">About</button>
+        <button class="nav-link" data-page="resume" type="button">Resume</button>
+        <button class="nav-link" data-page="portfolio" type="button">Projects</button>
+      </div>
+      <div class="footer-nav-group">
+        <span>Connect</span>
+        <a id="footer-email" href="#">Email</a>
+        <a href="assets/docs/Mahdi_Khalili_CV.pdf" target="_blank">View CV</a>
+        <button class="nav-link" data-page="contact" type="button">Contact</button>
+      </div>
+      <div class="footer-cta">
+        <span class="mini-label">CURRENT FOCUS</span>
+        <strong>GIS • GeoAI • 3D City Models</strong>
+        <button class="btn primary nav-link" data-page="portfolio" type="button">View my work →</button>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© <span id="year"></span> Mahdi Khalili</span>
+      <span>Designed for clarity, credibility and easy updates.</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

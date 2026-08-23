@@ -1,0 +1,9 @@
+{
+  "name": "mahdi-khalili-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mahdi Khalili geospatial portfolio",
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
