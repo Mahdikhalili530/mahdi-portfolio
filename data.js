@@ -168,6 +168,14 @@ const portfolioData = {
   ],
 
   certifications: [
+   {
+  title: "CLGE Young Surveyors’ Contest 2026 — Certificate of Participation",
+  type: "Professional / Academic Certificate",
+  year: "2026",
+  description: "Participated in the CLGE Young Surveyors’ Contest 2026 in the Bachelor’s and Master’s Degree Category with the paper “From Field Survey to an AI-Enabled Digital Twin: Integrating GIS, BIM, Point Cloud Visualization and WebGIS for Smart Campus Management.”",
+  pdf: "2026_08_27_Mahdi_Khalili_Certificate_Participation_CLGE_YSC_Masters-Bachelors_v1.0.pdf",
+  certificatePdf: "2026_08_27_Mahdi_Khalili_Certificate_Participation_CLGE_YSC_Masters-Bachelors_v1.0.pdf"
+},
     {
       title: "TOEFL iBT — Total Score 100",
       type: "Language Certificate",
