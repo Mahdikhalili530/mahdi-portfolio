@@ -181,15 +181,53 @@ function renderProjects(category="All") {
 }
 renderProjects();
 
-D.certifications.forEach(c => byId("cert-grid").insertAdjacentHTML("beforeend", `
-  <article class="cert-card"${c.linkedinPost ? ` data-link="${c.linkedinPost}" role="link" tabindex="0"` : ""}>
-    ${c.image ? `<div class="cert-cover"><img src="${c.image}" alt="${c.title}"></div>` : ""}
-    <div class="cert-card-body">
-      <div class="type">${c.type} • ${c.year}</div>
-      <h3>${c.title}</h3>
-      <p>${c.description}</p>
-    </div>
-  </article>`));
+D.certifications.forEach(c => {
+  const link = c.linkedinPost || c.certificatePdf || c.pdf || "";
+
+  const preview = c.pdf
+    ? `
+      <div class="cert-cover cert-pdf-cover">
+        <iframe
+          class="cert-pdf-preview"
+          src="${c.pdf}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+          title="${c.title}"
+          loading="lazy">
+        </iframe>
+      </div>
+    `
+    : c.image
+      ? `
+        <div class="cert-cover">
+          <img src="${c.image}" alt="${c.title}">
+        </div>
+      `
+      : "";
+
+  byId("cert-grid").insertAdjacentHTML("beforeend", `
+    <article
+      class="cert-card"
+      ${link ? `data-link="${link}" role="link" tabindex="0"` : ""}
+    >
+      ${preview}
+
+      <div class="cert-card-body">
+        <div class="type">${c.type} • ${c.year}</div>
+
+        <h3>${c.title}</h3>
+
+        <p>${c.description}</p>
+
+        ${
+          c.certificatePdf
+            ? `<div class="cert-action">View Certificate PDF ↗</div>`
+            : c.linkedinPost
+              ? `<div class="cert-action">Open LinkedIn Post ↗</div>`
+              : ""
+        }
+      </div>
+    </article>
+  `);
+});
 
 [
   ["Location",D.profile.location],
