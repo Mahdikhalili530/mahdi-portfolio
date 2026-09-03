@@ -182,8 +182,6 @@ function renderProjects(category="All") {
 renderProjects();
 
 D.certifications.forEach(c => {
-  const link = c.linkedinPost || c.certificatePdf || c.pdf || "";
-
   const preview = c.pdf
     ? `
       <div class="cert-cover cert-pdf-cover">
@@ -204,26 +202,31 @@ D.certifications.forEach(c => {
       : "";
 
   byId("cert-grid").insertAdjacentHTML("beforeend", `
-    <article
-      class="cert-card"
-      ${link ? `data-link="${link}" role="link" tabindex="0"` : ""}
-    >
+    <article class="cert-card">
       ${preview}
 
       <div class="cert-card-body">
         <div class="type">${c.type} • ${c.year}</div>
-
         <h3>${c.title}</h3>
-
         <p>${c.description}</p>
 
-        ${
-          c.certificatePdf
-            ? `<div class="cert-action">View Certificate PDF ↗</div>`
-            : c.linkedinPost
-              ? `<div class="cert-action">Open LinkedIn Post ↗</div>`
+        <div class="cert-actions">
+          ${
+            c.certificatePdf
+              ? `<a href="${c.certificatePdf}" target="_blank" rel="noopener noreferrer">
+                  View Certificate PDF ↗
+                </a>`
               : ""
-        }
+          }
+
+          ${
+            c.linkedinPost
+              ? `<a href="${c.linkedinPost}" target="_blank" rel="noopener noreferrer">
+                  Open LinkedIn Post ↗
+                </a>`
+              : ""
+          }
+        </div>
       </div>
     </article>
   `);
@@ -323,15 +326,3 @@ if (contactForm) {
   });
 }
 
-// Open certification/activity cards that have a LinkedIn post.
-document.addEventListener("click", (event) => {
-  const card = event.target.closest(".cert-card[data-link]");
-  if (card) window.open(card.dataset.link, "_blank", "noopener,noreferrer");
-});
-document.addEventListener("keydown", (event) => {
-  const card = event.target.closest?.(".cert-card[data-link]");
-  if (card && (event.key === "Enter" || event.key === " ")) {
-    event.preventDefault();
-    window.open(card.dataset.link, "_blank", "noopener,noreferrer");
-  }
-});
